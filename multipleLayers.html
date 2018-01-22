@@ -49,6 +49,18 @@
 	mymap.fitBounds(earthquakelayer.getBounds());
 }
 </script> 
+<script>
+	function removeEarthquakeData() {
+	alert("remove the earthquake data here");
+	}
+	// make sure that there is a variable for the earthquake layer to be referenced by
+	// this should be GLOBAL – i.e. not inside a function – so that any code can see the variable
+	var earthquakelayer;
+	function removeEarthquakeData() {
+		alert("Earthquake data will be removed");
+		mymap.removeLayer( earthquakelayer );
+	}
+</script>
  
   <!-- the following links incorporate the CSS required for custom icon creation -->
   <link rel="stylesheet" href=" ionicons.min.css">
@@ -80,7 +92,8 @@
     }).addTo(mymap);
 	
 	</script>
-	<button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data 
-	</button>
+	<button id="loadData" name="loadData" onclick="loadEarthquakeData()">Click here to load the data </button>
+	<button id="removeEarthquakeData" name="removeEarthquakeData"
+	onclick="removeEarthquakeData()">Click here to remove the Earthquake Data </button>
  </body>
 </html>
